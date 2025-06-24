@@ -1,19 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-// imports of components
-import Header from './components/Header';
 import Navbar from './components/Navbar';
-
-
+import Header from './components/Header'
+import './App.css'
+import ScrollVelocityText from './components/VelocityText'
+import FeatureSection from './components/FeaturesSection'
+import AboutUs from './components/AboutUs'
+import InvestorTab from './components/Investors'
+import FAQ from './components/FAQ';
+import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <Header></Header>
+      <div>
+        <Navbar></Navbar>
+        <Header></Header>
+        <ScrollVelocityText></ScrollVelocityText>
+        <AboutUs></AboutUs>
+        <FeatureSection></FeatureSection>
+        <InvestorTab></InvestorTab>
+        <FAQ></FAQ>
+        <ContactUs></ContactUs>
+        <Footer></Footer>
+      </div>
     </>
   )
 }

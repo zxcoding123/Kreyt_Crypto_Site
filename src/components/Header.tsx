@@ -1,48 +1,127 @@
-import { useState } from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import Aurora from '../blocks/Backgrounds/Aurora/Aurora';
+import React from 'react';
+import Squares from '../../components/bits/Squares/Squares';
+import StarBorder from '../../components/bits/StarBorder/StarBorder';
+import CircularText from '../../components/bits/CircularText/CircularText';
+import ShinyText from '../../components/bits/TextAnimations/ShinyText/ShinyText';
+import Magnet from '../../components/bits/Animations/Magnet/Magnet';
+import AnimatedContent from '../../components/bits/Animations/AnimatedContent/AnimatedContent';
+import DecryptedText from '../../components/bits/TextAnimations/DecryptedText/DecryptedText';
+import BlurText from "../../components/bits/TextAnimations/BlurText/BlurText";
 
-function Header() {
+const handleAnimationComplete = () => {
+    console.log('Animation completed!');
+};
+
+const Header: React.FC = () => {
     return (
-        <section className='w-screen h-screen  blurry-bg overflow-hidden text-white figtree-font relative header'>
-         
-  <div className="arc-gradient" /> 
-            <div className='grid grid-cols-2 gap-50 h-full items-center px-20 figtree-font z-100'>
-                <div>
-                    <span className='bg-gray-700 pl-2 pr-2 pt-1 pb-1 rounded-full opacity-55'>Top AI for growing your business</span>
-                    <h1 className='text-7xl leading-tight'>
-                        Automate &<br />
-                        manage your<br />
-                        business with ease.
+        <header className="bg-black text-white py-4 relative">
+            <div className="container-fluid mx-auto  flex flex-col items-center justify-center min-h-screen text-center relative">
+                <div className='absolute inset-0 w-full h-full z-1'>
+                    <Squares
+                        speed={0.5}
+                        squareSize={100}
+                        direction="up"
+                        borderColor="#333333FF"
+                        hoverFillColor="#222"
+
+                    ></Squares>
+                </div>
+
+
+                <div className="z-10 relative">
+                    <h1 className="text-5xl mb-25">
+                        <AnimatedContent
+                            distance={150}
+                            direction="vertical"
+                            reverse={false}
+                            duration={1.2}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity
+                            scale={1.1}
+                            threshold={0.2}
+                            delay={0.3}
+                        >
+                            <CircularText
+                                text="Kreyt * Kreyt * Kreyt * "
+                                onHover="speedUp"
+                                spinDuration={20}
+                                className="custom-class"
+                            />
+                        </AnimatedContent>
                     </h1>
-                </div>
-                <div className='mr-50'>
-                    <p>
-                        Discover cutting-edge AI solutions designed to elevate your business
-                        towards new insights and drive new results towards growing your business.
+                    <Magnet padding={11000} disabled={false} magnetStrength={50}>
+                        <AnimatedContent
+                            distance={150}
+                            direction="vertical"
+                            reverse={false}
+                            duration={1.2}
+                            ease="power3.out"
+                            initialOpacity={0.2}
+                            animateOpacity
+                            scale={1.1}
+                            threshold={0.2}
+                            delay={0.9}
+                        >
+                            <h1 className="text-6xl mb-5">
+                                <ShinyText text="KREYT" disabled={false} speed={5} />
+                            </h1>
+                        </AnimatedContent>
+                    </Magnet>
+
+
+                    <h1 className="text-5xl mb-5">
+
+
+                        <DecryptedText
+                            text="Your Gateway to Web3 & Blockchain Innovation"
+                            speed={100}
+                            maxIterations={20}
+                            characters="ABCD1234!?"
+                            className="revealed"
+                            parentClassName="all-letters"
+                            encryptedClassName="encrypted"
+                            animateOn='view'
+                        />
+                    </h1>
+                    <p className="mb-5">
+
+                        <BlurText
+                            text=" As the digital landscape continues to evolve, our mission is to empower individuals and businesses alike with decentralized solutions that revolutionize."
+                            delay={70}
+                            animateBy="words"
+                            direction="bottom"
+                            onAnimationComplete={handleAnimationComplete}
+                            className=""
+                        />
+
+
                     </p>
-                    <div className='flex gap-5 mt-5 align-middle'>
-                        <button className='bg-white text-black p-3 pl-7 pr-7 rounded-full font-semibold'>Free consultation</button>
-                        <span className='flex ml-0.5 mt-1.5'>
-                            <Avatar className='border-white border'>
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <Avatar className='border-white border'>
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <Avatar className='border-white border'>
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                        </span>
-                    </div>
+                    
+                    <StarBorder
+                        as="button"
+                        className="custom-class-btn mt-3 mr-5"
+                        color="white"
+                        speed="5s"
+                    >
+                        <p>Get Started</p>
+                    </StarBorder>
+                    <StarBorder
+                        as="button"
+                        className="custom-class"
+                        color="white"
+                        speed="7s"
+                    >
+                        See All Services
+                    </StarBorder>
                 </div>
+
+
+
             </div>
 
-        </section>
-    )
-}
+        </header>
+    );
+};
 
-export default Header
+export default Header;
