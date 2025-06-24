@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+
+.figtree-font {
+    font-family: "Figtree", sans-serif !important;
+}
+.blurry-bg::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -50%;
+  width: 200%;
+  height: 250%;
+  background: radial-gradient(circle at center, #00f5c0 25%, #0057a0 22%, #000000 0%);
+  filter: blur(100px);
+  opacity: 1.0;
+  animation: moveGradient 20s ease-in-out infinite;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* @keyframes moveGradient {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(10%, 10%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+} */
