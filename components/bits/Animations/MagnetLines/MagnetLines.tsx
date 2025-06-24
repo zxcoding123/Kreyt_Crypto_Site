@@ -2,7 +2,8 @@
 	Installed from https://reactbits.dev/ts/default/
 */
 
-import React, { useRef, useEffect, CSSProperties } from "react";
+import React, { useRef, useEffect } from "react";
+import type {CSSProperties} from "react";
 import "./MagnetLines.css";
 
 interface MagnetLinesProps {

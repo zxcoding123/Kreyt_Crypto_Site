@@ -1,16 +1,17 @@
 import React from "react";
 import "./StarBorder.css";
 
-type StarBorderProps<T extends React.ElementType> =
-  React.ComponentPropsWithoutRef<T> & {
-    as?: T;
-    className?: string;
-    children?: React.ReactNode;
-    color?: string;
-    speed?: React.CSSProperties['animationDuration'];
-  }
+// Define the props type for StarBorder
+type StarBorderProps<T extends React.ComponentType<any>> = {
+  as?: T;
+  className?: string;
+  children?: React.ReactNode;
+  color?: string;
+  speed?: React.CSSProperties['animationDuration'];
+} & React.ComponentPropsWithoutRef<T>;
 
-const StarBorder = <T extends React.ElementType = "button">({
+// Define the StarBorder component
+const StarBorder = <T extends React.ComponentType<any> = typeof React.Component>({
   as,
   className = "",
   color = "white",

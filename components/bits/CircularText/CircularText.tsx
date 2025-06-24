@@ -4,8 +4,9 @@ import {
   useAnimation,
   useMotionValue,
   MotionValue,
-  Transition,
 } from "framer-motion";
+
+import type {Transition} from "framer-motion";
 
 import "./CircularText.css";
 interface CircularTextProps {

@@ -99,7 +99,7 @@ const Header: React.FC = () => {
                     </p>
                     
                     <StarBorder
-                        as="button"
+                   
                         className="custom-class-btn mt-3 mr-5"
                         color="white"
                         speed="5s"
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                         <p>Get Started</p>
                     </StarBorder>
                     <StarBorder
-                        as="button"
+                    
                         className="custom-class"
                         color="white"
                         speed="7s"
