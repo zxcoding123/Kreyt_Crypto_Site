@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coins, ShieldCheck, Wifi, Globe, Zap, Lock, Wallet, Network } from "lucide-react";
+import { Coins, ShieldCheck, Wifi, Globe, Zap, Lock, Network } from "lucide-react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import SpotlightCard from '../../components/bits/Components/SpotlightCard/SpotlightCard';

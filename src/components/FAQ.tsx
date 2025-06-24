@@ -4,11 +4,9 @@ import {
   AccordionTrigger,
 } from "../components/ui/accordion"
 import { motion, AnimatePresence } from "framer-motion"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import type { Variants } from 'framer-motion';
 import { useState } from "react"
 import AnimatedContent from '../../components/bits/Animations/AnimatedContent/AnimatedContent'
-import Aurora  from '../../components/bits/Backgrounds/Aurora/Aurora'
 
 
 const faqData = [
